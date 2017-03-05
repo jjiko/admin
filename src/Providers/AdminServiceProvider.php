@@ -10,7 +10,7 @@ class AdminServiceProvider extends ServiceProvider
   {
     parent::boot();
 
-    $this->loadViewsFrom(__DIR__ . '/../Admin/views', 'admin');
+    $this->loadViewsFrom(__DIR__ . '/../views', 'admin');
     $this->hostArray = ['local.joejiko.com'];
   }
 
