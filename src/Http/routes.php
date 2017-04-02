@@ -12,7 +12,23 @@ Route::group(['prefix' => 'admin'], function(){
   Route::group(['namespace' => 'Jiko\Admin\Http\Controllers'], function () {
     // @todo
     Route::get('/', ['uses' => 'AdminPageController@index', 'as' => 'admin_home']);
-    Route::get('gaming', ['uses' => 'AdminPageController@gaming']);
+
+    Route::name('users')->get('/users', 'UserPageController@index');
+    Route::post('/user/{user}/roles', 'UserPageController@userUpdateRoles');
+    Route::name('user_roles')->get('/user/{user}/roles', 'UserPageController@userShowRoles');
+
+    Route::name('roles')->get('/roles', 'UserPageController@roles');
+
+    Route::name('role')->post('/role', 'UserPageController@storeRole');
+    Route::put('/role', 'UserPageController@updateRole');
+
+    Route::name('role_permissions')->get('/role/{role}/permissions', 'UserPageController@showRolePermissions');
+    Route::post('/role/{role}/permissions', 'UserPageController@updateRolePermissions');
+
+    Route::name('permissions')->get('/permissions', 'UserPageController@permissions');
+    Route::name('permission')->post('/permission', 'UserPageController@storePermission');
+    Route::put('/permission', 'UserPageController@updatePermission');
+
     Route::get('photos', function() {
       $client = new Larabros\Elogram\Client(
         getenv('INSTAGRAM_CLIENT_ID'),

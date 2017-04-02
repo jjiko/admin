@@ -6,10 +6,10 @@
     <button class="btn btn-default" type="submit">Sync Wishlist</button>
 </form>
 -->
-    <a class="btn btn-default" href="/admin/pages">Manage Pages</a>
-    <a class="btn btn-default" href="/admin/gaming">Gaming</a>
+    <a class="btn btn-default" href="/admin/pages">Pages</a>
+    <a class="btn btn-default" href="/admin/gaming/go-live">Go live</a>
+    <a class="btn btn-default" href="/admin/gaming/stream-preview">Stream preview</a>
     <a class="btn btn-default" href="/admin/teamspeak">TeamSpeak</a>
-    <a class="btn btn-default" href="/admin/upload">CDN Upload</a>
 </div>
 
 <div class="row">
