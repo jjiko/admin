@@ -1,17 +1,19 @@
 <?php
 Route::group(['prefix' => 'admin'], function(){
 
-  Route::post('page', function() {
-    // @todo insert page
-  });
-
-  Route::put('page/{id}', function() {
-    // @todo update page
-  });
-
   Route::group(['namespace' => 'Jiko\Admin\Http\Controllers'], function () {
     // @todo
-    Route::get('/', ['uses' => 'AdminPageController@index', 'as' => 'admin_home']);
+    Route::name('admin_home')->get('/', 'AdminPageController@index');
+
+    Route::get('pages', 'AdminPageController@pages');
+
+    Route::post('page', function() {
+      // @todo insert page
+    });
+
+    Route::put('page/{id}', function() {
+      // @todo update page
+    });
 
     Route::name('users')->get('/users', 'UserPageController@index');
     Route::post('/user/{user}/roles', 'UserPageController@userUpdateRoles');

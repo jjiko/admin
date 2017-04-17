@@ -1,17 +1,17 @@
 <nav id="navigation" class="" data-role="navigation">
-    <a class="col-lg-1 col-md-2 col-sm-2 col-xs-2" href="{{ route('admin_home', [], false) }}">
+    <a class="col-lg-1 col-md-2 col-sm-2 col-xs-2 navigation-item" href="{{ route('admin_home', [], false) }}">
         <i data-icon="" class="icon-home batch"></i>
         <span class="hidden-xs">Admin</span>
     </a>
-    <a class="col-lg-1 col-md-2 col-sm-2 col-xs-2" href="/admin/gaming">
+    <a class="col-lg-1 col-md-2 col-sm-2 col-xs-2 navigation-item" href="/admin/gaming">
         <i data-icon="" class="icon-home batch"></i>
         <span class="hidden-xs">Games</span>
     </a>
-    <a class="col-lg-1 col-md-2 col-sm-2 col-xs-2" href="/admin/users">
+    <a class="col-lg-1 col-md-2 col-sm-2 col-xs-2 navigation-item" href="/admin/users">
         <i data-icon="" class="icon-home batch"></i>
         <span class="hidden-xs">Users</span>
     </a>
-    <a class="col-lg-1 col-md-2 col-sm-2 col-xs-hidden" href="/admin/upload">
+    <a class="col-lg-1 col-md-2 col-sm-2 col-xs-hidden navigation-item" href="/admin/upload">
         <i data-icon="" class="icon-home batch"></i>
         <span class="hidden-xs">Upload</span>
     </a>
@@ -32,7 +32,7 @@
 
             <div class="col-md-2" style="text-align:center">
                 <div class="row">
-                    <a class="col-md-12 navigation-item" id="primary-menu-extended" data-role="menu" href="/menu"
+                    <a class="col-md-12 navigation-item" id="primary-menu-extended" data-role="menu-toggle" href="/menu"
                        style="background-color:rgba(0,0,0,.3)">
                         <i class="fa fa-bars"></i></a>
                 </div>
@@ -92,7 +92,6 @@
                             </a>
                         </li>
                     </ul>
-                    You found the <em>(not so)</em> secret menu!
                 </div>
             </div>
         </div>

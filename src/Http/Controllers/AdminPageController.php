@@ -38,6 +38,12 @@ class AdminPageController extends AdminController
     return $this->content('admin::file');
   }
 
+  public function pages()
+  {
+    $routeCollection = \Route::getRoutes();
+    $this->setContent('admin::pages', ['pages' => $routeCollection]);
+  }
+
   public function gaming()
   {
     return $this->content('admin::gaming');
