@@ -1,5 +1,5 @@
 <?php
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin'], function () {
 
   Route::group(['namespace' => 'Jiko\Admin\Http\Controllers'], function () {
     // @todo
@@ -7,13 +7,15 @@ Route::group(['prefix' => 'admin'], function(){
 
     Route::get('pages', 'AdminPageController@pages');
 
-    Route::post('page', function() {
+    Route::post('page', function () {
       // @todo insert page
     });
 
-    Route::put('page/{id}', function() {
+    Route::put('page/{id}', function () {
       // @todo update page
     });
+
+    Route::name('croppie')->get('croppie', 'AdminPageController@croppie');
 
     Route::name('users')->get('/users', 'UserPageController@index');
     Route::post('/user/{user}/roles', 'UserPageController@userUpdateRoles');
@@ -31,14 +33,14 @@ Route::group(['prefix' => 'admin'], function(){
     Route::name('permission')->post('/permission', 'UserPageController@storePermission');
     Route::put('/permission', 'UserPageController@updatePermission');
 
-    Route::get('photos', function() {
+    Route::get('photos', function () {
       $client = new Larabros\Elogram\Client(
         getenv('INSTAGRAM_CLIENT_ID'),
         getenv('INSTAGRAM_CLIENT_SECRET'),
         null,
         getenv('INSTAGRAM_REDIRECT_URI')
       );
-      if(!Input::has('code')) {
+      if (!Input::has('code')) {
         return redirect($client->getLoginUrl());
       }
 
@@ -48,7 +50,7 @@ Route::group(['prefix' => 'admin'], function(){
     Route::post('upload', ['uses' => 'AdminPageController@storeFile']);
   });
 
-  Route::get('sync/wishlist', function(){
+  Route::get('sync/wishlist', function () {
     return Response::json([]);
   });
 

@@ -48,4 +48,9 @@ class AdminPageController extends AdminController
   {
     return $this->content('admin::gaming');
   }
+
+  public function croppie()
+  {
+    return $this->content('admin::croppie');
+  }
 }
