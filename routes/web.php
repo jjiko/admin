@@ -5,6 +5,9 @@ Route::group(['prefix' => 'admin'], function () {
     // @todo
     Route::name('admin_home')->get('/', 'AdminPageController@index');
 
+    Route::name('admin_twitter')->get('/twitter', 'AdminPageController@twitter');
+    Route::name('admin_twitter_whitelist')->put('/twitter/whitelist', 'AdminPageController@twitterWhitelist');
+
     Route::get('pages', 'AdminPageController@pages');
 
     Route::post('page', function () {
@@ -48,6 +51,7 @@ Route::group(['prefix' => 'admin'], function () {
     });
     Route::get('upload', ['uses' => 'AdminPageController@getFile']);
     Route::post('upload', ['uses' => 'AdminPageController@storeFile']);
+    Route::post('upload-async', ['uses' => 'AdminPageController@storeFilesAsync']);
   });
 
   Route::get('sync/wishlist', function () {

@@ -25,6 +25,7 @@
             <aside id="content-sidebar" class="inline-col hidden-sm hidden-xs" data-role="sidebar-1"
                    data-equalize="parent">
                 @include('layouts.partials.sidebars.3')
+                @stack('sidebars.3')
             </aside>
             <footer id="content-footer">
                 <div style="height:40px">
@@ -41,9 +42,11 @@
             <div id="corner-tr">
                 {{-- @include('layouts.partials.sidebars.3') --}}
                 @include('layouts.partials.sidebars.4')
+                @stack('sidebars.4')
             </div>
             <div id="corner-br">
                 @include('layouts.partials.sidebars.5')
+                @stack('sidebars.5')
             </div>
         </aside>
         <div id="footer" data-role="footer" data-position="fixed"></div>

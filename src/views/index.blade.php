@@ -10,6 +10,7 @@
     <a class="btn btn-default" href="/admin/gaming/go-live">Go live</a>
     <a class="btn btn-default" href="/admin/gaming/stream-preview">Stream preview</a>
     <a class="btn btn-default" href="/admin/teamspeak">TeamSpeak</a>
+    <a class="btn btn-default" href="/admin/iris">Blue Iris</a>
 </div>
 
 <div class="row">

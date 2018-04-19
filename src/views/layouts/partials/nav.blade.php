@@ -91,6 +91,7 @@
                                 <span class="visible-lg-inline-block">Zeah</span>
                             </a>
                         </li>
+                        @stack('nav.extended')
                     </ul>
                 </div>
             </div>

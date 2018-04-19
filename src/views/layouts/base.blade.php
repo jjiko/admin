@@ -56,17 +56,18 @@ Leave your console open maybe?
 @yield('app')
 
 {{-- 9/2014: switched to browserify & uglify --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/custom-elements/1.1.0/custom-elements.min.js" integrity="sha256-ZOXLo/HwqqXYK50nqoxLACDgiH/T4B1TfE3OsZ/vd3o=" crossorigin="anonymous"></script>
 <script src="/dist/js/libs.js"></script>
 @section('app.core.js')
     @if(App::environment() == 'production')
         <script src="/dist/js/app.js" async></script>
     @else
-        <script src="/dist/js/app.js" async></script>
+        <script src="/dist/dev/js/app.js?cache={{ time() }}" async></script>
     @endif
 @show
 
 {{-- Overrides --}}
-@yield('scripts.footer')
+@stack('scripts.footer')
 <div id="resLoader" hidden>@include('sb.loader')</div>
 </body>
 </html>
