@@ -25,6 +25,7 @@
             <aside id="content-sidebar" class="inline-col hidden-sm hidden-xs" data-role="sidebar-1"
                    data-equalize="parent">
                 @include('layouts.partials.sidebars.3')
+                @stack('sidebars.content')
                 @stack('sidebars.3')
             </aside>
             <footer id="content-footer">

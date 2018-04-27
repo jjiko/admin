@@ -5,6 +5,8 @@ Route::group(['prefix' => 'admin'], function () {
     // @todo
     Route::name('admin_home')->get('/', 'AdminPageController@index');
 
+    Route::name('admin_nest')->get('/nest', 'AdminPageController@nest');
+
     Route::name('admin_twitter')->get('/twitter', 'AdminPageController@twitter');
     Route::name('admin_twitter_whitelist')->put('/twitter/whitelist', 'AdminPageController@twitterWhitelist');
 

@@ -101,7 +101,7 @@ class AdminPageController extends AdminController
   {
     $result = TwitterRelationship::where('id', request()->input('id'))
       ->update([
-        'whitelist' => (bool) request()->input('whitelist')
+        'whitelist' => (bool)request()->input('whitelist')
       ]);
     return $result;
   }
@@ -116,6 +116,13 @@ class AdminPageController extends AdminController
       'whitelist' => TwitterRelationship::where('whitelist', 1)->orderBy('last_status_created_at', 'desc')->get(),
       'trashed' => TwitterRelationship::withTrashed()->where('deleted_at', '<>', null)->get()
     ]);
+  }
+
+  public function nest()
+  {
+    $nestUser = auth()->user()->nest;
+    if (!$nestUser) return redirect('/user');
+    return $this->content('admin::nest.console', ['data' => $nestUser->data]);
   }
 
 }
