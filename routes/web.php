@@ -10,6 +10,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::name('admin_twitter')->get('/twitter', 'AdminPageController@twitter');
     Route::name('admin_twitter_whitelist')->put('/twitter/whitelist', 'AdminPageController@twitterWhitelist');
 
+    Route::name('admin_google_analytics')->get('/google/analytics', 'AnalyticsPageController@index');
+    Route::name('admin_google_analytics_errors')->get('/google/analytics/errors', 'AnalyticsPageController@errors');
+    Route::name('admin_google_analytics_warnings')->get('/google/analytics/warnings', 'AnalyticsPageController@warnings');
+
     Route::get('pages', 'AdminPageController@pages');
 
     Route::post('page', function () {

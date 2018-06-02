@@ -14,6 +14,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     ]);
     $this->loadViewsFrom(__DIR__ . '/views', 'admin');
     $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+
+    view()->composer('admin::google.analytics', 'Jiko\Admin\Http\ViewComposers\AdminAnalyticsComposer');
+    view()->composer('admin::google.analytics-error', 'Jiko\Admin\Http\ViewComposers\AdminAnalyticsErrorComposer');
+    view()->composer('admin::google.analytics-warning', 'Jiko\Admin\Http\ViewComposers\AdminAnalyticsWarningComposer');
   }
 
   public function register()

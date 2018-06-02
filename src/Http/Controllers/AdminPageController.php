@@ -12,7 +12,7 @@ class AdminPageController extends AdminController
 {
   protected $layout = 'admin::layouts.default';
 
-  public function index(Request $request)
+  public function index()
   {
     return $this->content('admin::index');
   }
@@ -116,6 +116,11 @@ class AdminPageController extends AdminController
       'whitelist' => TwitterRelationship::where('whitelist', 1)->orderBy('last_status_created_at', 'desc')->get(),
       'trashed' => TwitterRelationship::withTrashed()->where('deleted_at', '<>', null)->get()
     ]);
+  }
+
+  public function google()
+  {
+    return view('admin::google.analytics');
   }
 
   public function nest()

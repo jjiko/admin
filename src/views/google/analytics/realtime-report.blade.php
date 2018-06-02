@@ -1,0 +1,6 @@
+@include('admin::google.analytics.report-info')
+@include('admin::google.analytics.query-info')
+@include('admin::google.analytics.profile-info')
+@include('admin::google.analytics.column-headers')
+@include('admin::google.analytics.data-table')
+@include('admin::google.analytics.totals-for-all-results')
