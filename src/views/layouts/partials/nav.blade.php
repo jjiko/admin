@@ -77,13 +77,15 @@
                                 <span class="visible-lg-inline-block">Music Playlist</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ route('xbxdb', [], false) }}">
-                                <i class="fa fa-database"></i>
-                                <span class="visible-md-inline-block">XBXDB</span>
-                                <span class="visible-lg-inline-block">Xenoblade X Database</span>
-                            </a>
-                        </li>
+                        @if(Route::has('xbxdb'))
+                            <li>
+                                <a href="{{ route('xbxdb', [], false) }}">
+                                    <i class="fa fa-database"></i>
+                                    <span class="visible-md-inline-block">XBXDB</span>
+                                    <span class="visible-lg-inline-block">Xenoblade X Database</span>
+                                </a>
+                            </li>
+                        @endif
                         <li>
                             <a href="{{ route('zeah', [], false) }}">
                                 <i class="fa fa-heart"></i>

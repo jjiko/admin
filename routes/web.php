@@ -1,5 +1,5 @@
 <?php
-Route::group(['prefix' => 'admin'], function () {
+Route::prefix('admin')->middleware(['web'])->group(function () {
 
   Route::group(['namespace' => 'Jiko\Admin\Http\Controllers'], function () {
     // @todo
@@ -63,6 +63,4 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('sync/wishlist', function () {
     return Response::json([]);
   });
-
-  Route::get('xbx/bestiary-materials', 'Jiko\XBXDB\Admin\Http\Controllers\AdminPageController@bestiaryMaterials');
 });
